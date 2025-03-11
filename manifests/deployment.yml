@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mikecloudakspipeline 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mikecloudakspipeline
+  template:
+    metadata:
+      labels:
+        app: mikecloudakspipeline 
+    spec:
+      containers:
+        - name: mikecloudakspipeline 
+          image: eruaacr.azurecr.io/mikecloudakspipeline
+          ports:
+          - containerPort: 8080
